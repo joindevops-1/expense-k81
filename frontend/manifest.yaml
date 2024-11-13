@@ -53,6 +53,7 @@ apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
  name: frontend
+ namespace: expense
 spec:
  scaleTargetRef:
    apiVersion: apps/v1
@@ -72,3 +73,4 @@ spec:
     name: frontend # route traffic to the awesome-service
     port: 80
   targetGroupARN: arn:aws:elasticloadbalancing:us-east-1:315069654700:targetgroup/expense-dev/9137be2418eda3a7
+  targetType: ip
